@@ -1,0 +1,54 @@
+@media screen and (max-width: $breakpoint-sm - 1) {
+  .tab {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.tab__list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin: $fontsize-base 0 0;
+  padding: 0;
+  border-bottom: 1px solid $color-tab-border;
+  width: $breakpoint-sm;
+  @media screen and (min-width: $breakpoint-sm) {
+    width: 100%;
+  }
+}
+
+.tab__item {
+  display: inline-block;
+  font-size: $fontsize-base;
+  list-style: none;
+  border: 1px solid $color-tab-border;
+  margin: 0 2/3*$fontsize-base;
+  padding: $fontsize-base 0;
+  flex: 0 0 auto;
+  background-color: $color-tab-backgorund;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: relative;
+  top: 1px;
+
+  a {
+    text-decoration: none;
+    color: $color-tab-text;
+    padding: $fontsize-base 1.5*$fontsize-base;
+  }
+
+  &:last-child {
+    margin-right: 3*$fontsize-base;
+  }
+}
+
+.tab__item_selected {
+  background-color: $color-content-background;
+  border-bottom: 1px solid $color-content-background;
+
+  a {
+    color: $color-tab-text-selected;
+  }
+}
